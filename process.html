@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js运行机制</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*    console.log(1);
+     setTimeout(function () {
+     console.log(2)
+     },0);
+     console.log(3);
+     /!*
+     * js是单线程的   setTimeout异步任务，要挂起  js往后执行  1,3，然后再处理异步任务
+     * *!/*/
+
+
+
+    //    console.log('A');
+    //    while (1) {
+    //
+    //    }
+    //    console.log('B');
+    //    /*答案是输出A  然后一直转，不输出B  因为while是判断的，里面没有执行完*/
+
+
+    /*  console.log('A');
+     setTimeout(function () {
+     console.log('B');
+     },0);
+     while (1) {
+
+     }
+     /!*答案是输出A  然后一直转，不输出B
+     * 因为js是同步队列，setTimeout是异步队列，while是同步，同步没有执行完，异步是不会响应执行的*!/*/
+
+    for (var i = 0; i < 4; i++) {
+        setTimeout(function () {
+            console.log(i);
+        }, 1000)
+    }
+    /*先把每次执行的结果，扔到异步队列中，异步队列也不执行，然后for循环完了，在去一次性把异步队列执行了*/
+    /*4 4 4 4       for循环是同步任务，*/
+</script>
+</body>
+</html>
