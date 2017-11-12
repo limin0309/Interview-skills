@@ -23,6 +23,11 @@
     </style>
     <article class="child"></article>
 </section>
+
+
+
+
+
 <!--BFC垂直方向边距重叠-->
 <section id="margin">
     <style>
@@ -42,6 +47,9 @@
     <p>3</p>
 </section>
 
+
+
+
 <!--BFC不与float重叠-->
 <section id="layout">
     <style>
@@ -52,7 +60,7 @@
             float:left;
             width:100px;
             height:100px;
-            background:pink;
+            background:blue;
         }
         #layout .right{
             height:110px;
@@ -64,11 +72,17 @@
     <div class="right"></div>
 </section>
 
+
+
+
+
+<!--BFC子元素及时是float也会参与计算-->
 <section id="float">
     <style>
         #float{
             background:red;
             overflow: auto;
+            /*float:left;*/
         }
         #float .float{
             float:left;
